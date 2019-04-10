@@ -14,8 +14,8 @@ var Queue = function() {
   };
 
   someInstance.dequeue = function() {
-    // set a conditional so that the remove is larger than 0
-    if (remove >= 0) {
+    // set a conditional so that the counter is larger or equal than 0
+    if (counter >= 0) {
       // increment remove counter
       remove ++;
       // create a variable for what we are dequeing
@@ -32,8 +32,8 @@ var Queue = function() {
     if (counter >= remove) {
       // return counter minus the removed counter
       return counter - remove;
-      // need a conditional if rmemove was pressed more than once
-    } else if (remove > 0) {
+      // need a conditional if rmemove was pressed more than counter
+    } else if (remove > counter) {
       return 0;
     }
   };
