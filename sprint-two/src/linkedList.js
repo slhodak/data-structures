@@ -17,6 +17,7 @@ var LinkedList = function() {
 
 var Node = function(value) {
   var node = {};
+  //test
 
   node.value = value;
   node.next = null;
