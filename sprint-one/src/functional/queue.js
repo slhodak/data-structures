@@ -22,9 +22,9 @@ var Queue = function() {
       var rem = storage[remove];
       // remove from the storage
       delete rem;
+      // need to return what we are removing
       return rem;
     }
-    // need to return what we are removing
   };
 
   someInstance.size = function() {
@@ -37,6 +37,5 @@ var Queue = function() {
       return 0;
     }
   };
-
   return someInstance;
 };
