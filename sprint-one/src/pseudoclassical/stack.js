@@ -1,25 +1,21 @@
 var Stack = function() {
-  this.counter = 0;
+  this.top = 0;
+  this.storage = {};
 };
 
-Stack.prototype.push = function(value) {
-  this.counter ++;
-  this[this.counter] = value;
+Stack.prototype.push = function(data) {
+  this.storage[this.top] = data;
+  this.top++;
 };
 
 Stack.prototype.pop = function() {
-  if (this.counter > 0) {
-    var rem = this[this.counter];
-    this.counter --;
-    delete rem;
-    return rem;
+  if (this.top) {
+    this.top--;
+    return this.storage[this.top];
   }
-
 };
 
 Stack.prototype.size = function() {
-  return this.counter;
-  
+  return this.top;
 };
-
 

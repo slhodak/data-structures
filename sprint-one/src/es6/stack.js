@@ -1,22 +1,19 @@
 class Stack {
   constructor() {
-    this.counter = 0;
-  }
-  push(value) {
-    this.counter ++;
-    this[this.counter] = value;
-  }
-  pop() {
-    if (this.counter > 0) {
-      var rem = this[this.counter];
-      delete this[this.counter];
-      this.counter --;
-      return rem;
-    }
-    
+    this.top = 0;
+    this.storage = {};
   }
   size() {
-    return this.counter;
-
-  }
+    return this.top;
+  };
+  pop() {
+    if (this.top) {
+      this.top--;
+      return this.storage[this.top];
+    }
+  };
+  push(data) {
+    this.storage[this.top] = data;
+    this.top++;
+  };
 }

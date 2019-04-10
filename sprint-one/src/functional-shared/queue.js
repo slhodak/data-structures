@@ -6,48 +6,34 @@ var extend = function(obj1, obj2) {
 };
 
 var Queue = function() {
-  var storage = {};
-  storage.counter = 0;
-  storage.remove = 0;
-  extend(storage, queueMethods);
-  return storage;
+  // Hey! Rewrite in the new style. Your code will wind up looking very similar,
+  // but try not not reference your old code in writing the new style.
+  var instance = {};
+  instance.storage = {};
+  instance = _.extend(instance, queueMethods);
+  instance.end = 0;
+  
+  return instance;
 };
 
 var queueMethods = {};
 
-queueMethods.enqueue = function(value) {
-  // increment counter
-  this.counter++;
-  // store in the storage
-  this[this.counter] = value;
+queueMethods.enqueue = function(data) {
+  this.storage[this.end] = data;
+  this.end++;
 };
 
 queueMethods.dequeue = function() {
-  // if the counter is greater than 0
-  if (this.counter > 0) {
-    // increment remove
-    this.remove ++;
-    // declare a var for what is being removed
-    var rem = this[this.remove];
-    // delete what you want to remove
-    delete rem;
-    // return what you removed
-    return rem;
+  if (this.end) {
+    var firstInLine = this.storage[0];
+    for (var i = 0; i < this.end; i++) {
+      this.storage[i] = this.storage[i + 1];
+    };
+    this.end--;
+    return firstInLine;
   }
 };
 
 queueMethods.size = function() {
-  // set a conditional if the counter is larger than remove
-  if (this.counter > this.remove) {
-    // return counter minus remove
-    return this.counter - this.remove;
-    // else  if remove is larger than counter 
-  } else if (this.remove >= this.counter) {
-    // return 0
-    return 0;
-  }
-
-
+  return this.end;
 };
-
-
