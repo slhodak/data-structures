@@ -1,27 +1,41 @@
 var Queue = function() {
   var storage = {};
-  var end = 0;
-  // Implement the methods below
+  var someInstance = {};
+  // declare a counter to keep track of the queue
+  var counter = 0;
+  // declare a counter to keep track of the removed ones
+  var remove = 0;
 
   someInstance.enqueue = function(value) {
-    storage[end] = value;
-    end++;
+    // increment counter
+    counter ++;
+    // add to the storage
+    storage[counter] = value;
   };
-// iterator.call(context, obj[key], key, obj)
+
   someInstance.dequeue = function() {
-    if (end) {
-      var result = storage[0];
-      for (var i = 0; i < end; i++) {
-        storage[i] = storage[i + 1];
-      }
-      storage[end] = null;
-      end--;
-      return result;
+    // set a conditional so that the counter is larger or equal than 0
+    if (counter >= 0) {
+      // increment remove counter
+      remove ++;
+      // create a variable for what we are dequeing
+      var rem = storage[remove];
+      // remove from the storage
+      delete rem;
+      // need to return what we are removing
+      return rem;
     }
   };
 
   someInstance.size = function() {
-    return end;
+    // set a condition to see if counter is larger than the removed
+    if (counter >= remove) {
+      // return counter minus the removed counter
+      return counter - remove;
+      // need a conditional if rmemove was pressed more than counter
+    } else if (remove > counter) {
+      return 0;
+    }
   };
   return someInstance;
 };
