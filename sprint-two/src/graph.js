@@ -60,7 +60,7 @@ Graph.prototype.forEachNode = function(cb) {
   //  get all nodes in array
   //  apply callback to each one
   _.each(this.collection, function(value, key, collection) {
-      cb(parseInt(key));
+    cb(parseInt(key));
   });
 };
 
