@@ -15,8 +15,8 @@ treeMethods.addChild = function(value) {
 create a new tree variable with the value
 add the new tree to the calling object children
 */
-var node = Tree(value);
-this.children.push(node);
+  var node = Tree(value);
+  this.children.push(node);
 
 };
 
@@ -31,16 +31,15 @@ iterate through the children
    return true
 return false
 */
-if (this.value === target) {
-  return true;
-}
-for (var i = 0; i < this.children.length; i++ ) {
-  if (this.children[i].contains(target)) {
+  if (this.value === target) {
     return true;
   }
-}
-return false;
-
+  for (var i = 0; i < this.children.length; i++ ) {
+    if (this.children[i].contains(target)) {
+      return true;
+    }
+  }
+  return false;
 
 };
 
