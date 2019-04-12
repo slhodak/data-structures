@@ -52,4 +52,11 @@ describe('linkedList', function() {
   });
 
   // add more tests here to test the functionality of linkedList
+  it('should return nodes searched for in the list', function() {
+    linkedList.addToTail(2);
+    linkedList.addToTail(3);
+    linkedList.addToTail(5);
+    expect(linkedList.retrieve(3).value).to.equal(3);
+  });
+
 });
