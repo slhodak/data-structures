@@ -17,13 +17,13 @@ HashTable.prototype.insert = function(k, v) {
     push the key and value into the bucket with the given index
   */  
  
- var tuple = [k, v];
- var bucket = this._storage.get(index);
+  var tuple = [k, v];
+  var bucket = this._storage.get(index);
   if (bucket) {
     // iterate through bucket
     // check to see if the key exist
     // if so overwrite the key with a new value
-    for(var i = 0; i < bucket.length; i++) {
+    for (var i = 0; i < bucket.length; i++) {
       if (bucket[i][0] === k) {
         bucket[i][1] = v;
         return;
