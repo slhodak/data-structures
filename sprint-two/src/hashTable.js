@@ -29,11 +29,13 @@ HashTable.prototype.rehash = function(isGrowing) {
       });
     }
   });
+
   if (isGrowing) {
     this._limit = this._limit * 2;
   } else {
     this._limit = this._limit * 0.5;
   }
+  
   this._storage = LimitedArray(this._limit);
 
   _.each(temp, function(tuple) {
@@ -41,7 +43,6 @@ HashTable.prototype.rehash = function(isGrowing) {
   });
 
   this._isRehashing = false;
-
 };
 
 HashTable.prototype.insert = function(k, v) {
@@ -118,8 +119,14 @@ HashTable.prototype.remove = function(k) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
- 
- 
+insert
+  O(1)
+retrieve
+  O(1)
+remove
+  O(1)
+rehash
+  O(n + m)
  */
 
 

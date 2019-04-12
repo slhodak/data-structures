@@ -16,7 +16,7 @@ Graph.prototype.addNode = function(node) {
 // Return a boolean value indicating if the value passed to contains is represented in the graph.
 Graph.prototype.contains = function(node) {
   // determine if the node exists in the collection as a key
-  return _.contains(Object.keys(this.collection), node.toString());
+  return this.collection.hasOwnProperty(node);
 };
 
 // Removes a node from the graph.
@@ -55,7 +55,7 @@ Graph.prototype.removeEdge = function(fromNode, toNode) {
   }
 };
 
-// Pass in a cal dlback which will be executed on each node of the graph.
+// Pass in a callback which will be executed on each node of the graph.
 Graph.prototype.forEachNode = function(cb) {
   //  get all nodes in array
   //  apply callback to each one
@@ -65,7 +65,19 @@ Graph.prototype.forEachNode = function(cb) {
 };
 
 /*
- * Complexity: What is the time complexity of the above functions?
+  * Complexity: What is the time complexity of the above functions?
+  addNode
+    O(1)
+  contains
+    O(1)
+  removeNode
+    O(1)
+  hasEdge
+    O(n)
+  addEdge
+    O(1)
+  removeEdge
+    O(n + m)
+  forEachNode
+    O(n)
  */
-
-

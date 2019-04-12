@@ -47,15 +47,14 @@ var LinkedList = function() {
         return false by default
     */
     var currentNode = list.head;
-    var found = false;
-    while(!found && currentNode) {
+    while (currentNode) {
       if (currentNode.value === target) {
         return true;
       } else {
         currentNode = currentNode.next;
       }
     }
-    return found;
+    return false;
   };
 
   return list;
@@ -71,5 +70,13 @@ var Node = function(value) {
 };
 
 /*
- * Complexity: What is the time complexity of the above functions?
+Complexity: What is the time complexity of the above functions?
+
+addToTail
+  O(1)
+removeHead
+  O(1)
+contains
+  O(n)
+
  */

@@ -17,7 +17,6 @@ add the new tree to the calling object children
 */
   var node = Tree(value);
   this.children.push(node);
-
 };
 
 treeMethods.contains = function(target) {
@@ -47,4 +46,8 @@ return false
 
 /*
  * Complexity: What is the time complexity of the above functions?
+addChild
+  O(1)
+contains
+  O(n)
  */

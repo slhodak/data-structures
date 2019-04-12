@@ -37,7 +37,6 @@ var LimitedArray = function(limit) {
       throw new Error('Error trying to access an over-the-limit index');
     }
   };
-
   return limitedArray;
 };
 
@@ -56,4 +55,12 @@ var getIndexBelowMaxForKey = function(str, max) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ get
+  O(1)
+ set
+  O(1)
+ each
+  O(n)
+ getIndexBelowMaxForKey
+  O(n)
  */
