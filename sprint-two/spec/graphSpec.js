@@ -69,5 +69,13 @@ describe('graph', function() {
     expect(graph.hasEdge(5, 5)).to.equal(true);
   });
 
+  it('should not throw an error when adding an invalid edge', function() {
+    graph.addNode(5);
+    expect(graph.addEdge.bind(graph, 5, 2)).to.not.throw('');
+    expect(graph.addEdge.bind(graph, 5)).to.not.throw('');
+  });
 
+  // it('should require a node to be an integer', function() {
+
+  // });
 });

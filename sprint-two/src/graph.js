@@ -5,8 +5,6 @@ var Graph = function() {
   this.collection = {};
 };
 
-
-
 // Add a node to the graph, passing in the node's value.
 Graph.prototype.addNode = function(node) {
   //  store the node as a key in the collection, value as empty array
@@ -35,8 +33,10 @@ Graph.prototype.hasEdge = function(fromNode, toNode) {
 Graph.prototype.addEdge = function(fromNode, toNode) {
   //  add from into array of to
   //  add to into array of from
-  this.collection[fromNode.toString()].push(toNode);
-  this.collection[toNode.toString()].push(fromNode);
+  if (this.contains(fromNode) && this.contains(toNode)) {
+    this.collection[fromNode.toString()].push(toNode);
+    this.collection[toNode.toString()].push(fromNode);  
+  }
 };
 
 // Remove an edge between any two specified (by value) nodes.
