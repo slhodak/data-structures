@@ -56,7 +56,7 @@ describe('linkedList', function() {
     linkedList.addToTail(2);
     linkedList.addToTail(3);
     linkedList.addToTail(5);
-    expect(linkedList.retrieve(3).value).to.equal(3);
+    expect(linkedList.retrieve(3)).to.equal(3);
   });
 
 });

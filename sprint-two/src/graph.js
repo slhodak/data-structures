@@ -8,7 +8,11 @@ var Graph = function() {
 // Add a node to the graph, passing in the node's value.
 Graph.prototype.addNode = function(node) {
   //  store the node as a key in the collection, value as empty array
-  this.collection[node] = [];
+  if (typeof node === 'number') {
+    this.collection[node] = [];
+  } else {
+    throw new Error('Input must be a number');
+  }
 };
 
 // Return a boolean value indicating if the value passed to contains is represented in the graph.

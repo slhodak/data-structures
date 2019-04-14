@@ -75,7 +75,7 @@ describe('graph', function() {
     expect(graph.addEdge.bind(graph, 5)).to.not.throw('');
   });
 
-  // it('should require a node to be an integer', function() {
-
-  // });
+  it('should require a node to be an integer', function() {
+    expect(graph.addNode.bind(graph, 'a')).to.throw('');
+  });
 });

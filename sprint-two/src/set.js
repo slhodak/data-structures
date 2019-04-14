@@ -29,7 +29,8 @@ setPrototype.remove = function(item) {
   */
   var index = _.indexOf(this._storage, item);
   if (index > -1) {
-    return this._storage.splice(index, 1);
+    return this._storage.splice(index, 1)[0];
+
   }
 };
 

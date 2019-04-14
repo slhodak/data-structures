@@ -37,4 +37,10 @@ describe('binarySearchTree', function() {
     binarySearchTree.depthFirstLog(func);
     expect(array).to.eql([5, 2, 3, 7]);
   });
+
+
+  //  should self-balance... :)
+  xit('should never have depth exceed 1 + the logarithm (base 2) of the node count', function() {
+    //  requires a function to check for this
+  });
 });

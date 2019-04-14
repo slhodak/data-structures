@@ -3,6 +3,7 @@ var Tree = function(value) {
   newTree.value = value;
 
   newTree = _.extend(newTree, treeMethods);
+  newTree.parent = null;
   newTree.children = [];
 
   return newTree;
@@ -16,6 +17,7 @@ create a new tree variable with the value
 add the new tree to the calling object children
 */
   var node = Tree(value);
+  node.parent = this;
   this.children.push(node);
 };
 

@@ -48,6 +48,18 @@ var LinkedList = function() {
     return false;
   };
 
+  list.retrieve = function(target) {
+    var currentNode = list.head;
+    while (currentNode) {
+      if (currentNode.value === target) {
+        return currentNode.value;
+      } else {
+        currentNode = currentNode.next;
+      }
+    }
+    return false;
+  };
+
   return list;
 };
 

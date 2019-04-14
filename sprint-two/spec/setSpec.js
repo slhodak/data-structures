@@ -24,4 +24,10 @@ describe('set', function() {
     expect(set.contains('Mel Gibson')).to.equal(false);
   });
 
+  //  should return removed values
+  it('should return removed values', function() {
+    set.add('Brian Lagman');
+    var removed = set.remove('Brian Lagman');
+    expect(removed).to.equal('Brian Lagman');
+  });
 });
