@@ -1,5 +1,4 @@
 class DoublyLinkedList {
-  
   constructor() {
     this.head = null;
     this.tail = null;  
@@ -30,11 +29,6 @@ class DoublyLinkedList {
   }
 
   removeTail() {
-    //  save old tail
-    //  disconnect old tail's previous
-    //  tail points to tail previous
-    //  disconnect new tail's next
-    //  return old tail
     var oldTail = this.tail;
     this.tail = this.tail.previous;
     oldTail.previous = null;

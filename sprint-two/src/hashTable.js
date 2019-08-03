@@ -1,5 +1,3 @@
-
-
 var HashTable = function() {
   this._limit = 8;
   this._storage = LimitedArray(this._limit);
@@ -7,18 +5,6 @@ var HashTable = function() {
   this._isRehashing = false;
 };
 HashTable.prototype.rehash = function(isGrowing) {
-  /*
-  delcare a temp array to store the tupple
-  iterate through each bucket thats defined
-    iterate through each tuple in the bucket
-      push each tuple to the temp array
-    make the bucket equal to undefined
-    
-  change the designated size
-
-  iterate though our temp and inseer the key and value 
-  */
-  
   var temp = [];
   var hash = this;
   this._isRehashing = true;
